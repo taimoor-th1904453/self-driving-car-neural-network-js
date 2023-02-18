@@ -15,6 +15,27 @@ class Car {
     }
 
     update() {
+        this.#move();
+       
+    }
+
+    draw(ctx) {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(-this.angle);
+
+        ctx.beginPath();
+        ctx.rect(
+            -this.w / 2,
+            -this.h / 2,
+            this.w,
+            this.h
+        )
+        ctx.fill()
+        ctx.restore();
+    }
+
+    #move(){
         if (this.controls.forward) {
             // this.y -= 2; //y increases downwards on a computer
             this.speed += this.accele;
@@ -63,22 +84,5 @@ class Car {
 
         this.x -= Math.sin(this.angle) * this.speed;
         this.y -= Math.cos(this.angle) * this.speed;
-
-    }
-
-    draw(ctx) {
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        ctx.rotate(-this.angle);
-
-        ctx.beginPath();
-        ctx.rect(
-            -this.w / 2,
-            -this.h / 2,
-            this.w,
-            this.h
-        )
-        ctx.fill()
-        ctx.restore();
     }
 }
