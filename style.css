@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+}
+
+body{
+    background: darkseagreen;
+    overflow: hidden;
+    text-align: center;
+}
+
+#myCanvas{
+    background:lightgray;
+}
