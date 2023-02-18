@@ -9,7 +9,7 @@ class Controls{
     }
 
     #addKeyboardListener(){
-        document.onkeydown = (event) => {
+        document.onkeydown = (event) => { //using the arrow function so we can use 'this'
             switch(event.key){
                 case "ArrowLeft":
                     this.left = true;
